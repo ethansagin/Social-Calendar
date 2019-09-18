@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { addFriend } from '../actions/friends'
 
 class FriendInput extends Component {
     constructor() {
@@ -7,7 +9,8 @@ class FriendInput extends Component {
             name: '',
             visit_interval: 1,
             last_meetup: '',
-            next_meetup: ''
+            next_meetup: '',
+            loading: false
         }
     }
 
@@ -18,7 +21,15 @@ class FriendInput extends Component {
     }
 
     handleSubmit = (e) => {
-        
+        e.preventDefault()
+        const friend = {...this.state}
+        this.props.addFriend(friend)
+        this.setState({
+            name: '',
+            visit_interval: 1,
+            last_meetup: '',
+            loading: false
+        })
     }
 
     render() {
@@ -44,4 +55,4 @@ class FriendInput extends Component {
     }
 }
 
-export default FriendInput
+export default connect(null, { addFriend })(FriendInput)

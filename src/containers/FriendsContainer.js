@@ -9,8 +9,9 @@ class FriendsContainer extends Component {
         return(
             <div className='friends-container'>
                 Friends Container
-                {/* <FriendInput/>
-                <FriendsList/> */}
+                <button onClick={this.onClick}>Add Friend</button>
+                <FriendInput/>
+                {/* <FriendsList/> */}
             </div>
         )
     }
@@ -19,7 +20,7 @@ class FriendsContainer extends Component {
 const mapStateToProps = (state) => {
     return {
       friends: state.friendReducer.friends,
-      loading: state.friendsReducer.loading
+      loading: state.friendReducer.loading
     }
   }
   

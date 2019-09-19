@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
 class Friend extends Component {
-    render() {
+    render(){
         return(
             <div>
-                Made It!
+                abc
+                {console.log(this.props.friend)}
             </div>
         )
     }

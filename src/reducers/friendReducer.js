@@ -10,6 +10,11 @@ export default (state = {friends: [], loading: false}, action) => {
                 friends: action.payload,
                 loading: false
             }
+        case 'FETCH_FRIEND':
+            return{
+                friend: action.payload,
+                loading: false
+            }
         case 'ADD_FRIEND':
             return{
                 ...state,

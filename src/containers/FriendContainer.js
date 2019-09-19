@@ -11,7 +11,8 @@ class FriendContainer extends Component {
     render() {
         return(
             <div className='friend-container'>
-                <Friend friend={this.props.friend} />
+                {console.log(this.props.friend)}
+                {this.props.loading ? <h3>Loading...</h3> : <Friend friend={this.props.friend} />}
             </div>
         )
     }

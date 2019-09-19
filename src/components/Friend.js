@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Friend extends Component {
-    render(){
-        return(
-            <div>
-                abc
-                {console.log(this.props.friend)}
-            </div>
-        )
-    }
-}
+const Friend = (props) =>
+    <div className='friend'>
+        {console.log(props.friend)}
+        <h2>My Friend {props.friend.name}</h2>
+    </div>
 
 export default Friend

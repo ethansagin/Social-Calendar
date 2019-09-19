@@ -15,7 +15,7 @@ class FriendsContainer extends Component {
             <div className='friends-container'>
                 <h2>My Friends</h2>
                 <FriendInput/>
-                <FriendsList friends={this.props.friends} />
+                {this.props.loading ? <h3>Loading...</h3> : <FriendsList friends={this.props.friends} />}
             </div>
         )
     }

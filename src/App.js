@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './containers/Home'
 import FriendsContainer from './containers/FriendsContainer'
+import Navigation from './components/Navigation'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>React Social Calendar</h1>
-        <FriendsContainer />
-      </div>
+      <Router>
+        <Navigation />
+        <div className="App">
+          <Switch>
+            <Route exact path='/' component={Home}/>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

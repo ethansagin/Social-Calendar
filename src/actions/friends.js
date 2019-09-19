@@ -7,15 +7,6 @@ export const getFriends = () => {
     }
 }
 
-export const getFriend = (id) => {
-    return (dispatch) => {
-        dispatch({type: 'LOADING_FRIENDS'})
-        return fetch(`/friends/${id}`)
-        .then(resp => resp.json())
-        .then(friend => dispatch({type: 'FETCH_FRIEND', payload: friend}))
-    }
-}
-
 export const addFriend = (friend) => {
     return (dispatch) => {
         console.log(friend)

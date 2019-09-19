@@ -26,6 +26,6 @@ const mapStateToProps = (state) => {
       friends: state.friendReducer.friends,
       loading: state.friendReducer.loading
     }
-  }
+}
   
   export default connect(mapStateToProps, { getFriends })(FriendsContainer)

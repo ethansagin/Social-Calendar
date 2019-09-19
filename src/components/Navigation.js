@@ -20,6 +20,15 @@ const Navigation = () =>
                 background: 'darkblue'
             }}
         >Home</NavLink>
+
+        <NavLink
+            to='/friends'
+            exact
+            style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+        >Friend List</NavLink>
     </div>
 
 

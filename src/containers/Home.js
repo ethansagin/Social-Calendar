@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Home extends Component {
     render() {
         return(
-            <h3>Welcome!</h3>
+            <h2>Welcome to the React Social Calendar!</h2>
         )
     }
 }

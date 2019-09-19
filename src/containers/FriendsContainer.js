@@ -13,7 +13,7 @@ class FriendsContainer extends Component {
     render() {
         return(
             <div className='friends-container'>
-                Friends Container
+                <h2>My Friends</h2>
                 <FriendInput/>
                 <FriendsList friends={this.props.friends} />
             </div>

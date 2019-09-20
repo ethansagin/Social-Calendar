@@ -4,11 +4,16 @@ import FriendInput from '../components/FriendInput'
 import FriendsList from '../components/FriendsList'
 import { getFriends } from '../actions/friends'
 
-
 class FriendsContainer extends Component {
     componentDidMount(){
         this.props.getFriends()
     }
+
+    handleClick = (e) => {
+        e.preventDefault()
+        this.props.deleteFriend(e.target.id)
+    }
+
 
     render() {
         return(
@@ -28,4 +33,4 @@ const mapStateToProps = (state) => {
     }
 }
   
-  export default connect(mapStateToProps, { getFriends })(FriendsContainer)
+export default connect(mapStateToProps, { getFriends })(FriendsContainer)

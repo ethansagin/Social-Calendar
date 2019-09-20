@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { addFriend } from '../actions/meetups'
+import { addMeetup } from '../actions/meetups'
 
 class MeetupInput extends Component {
     constructor(props) {

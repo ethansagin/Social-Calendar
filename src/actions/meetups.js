@@ -1,6 +1,14 @@
+export const getMeetups = () => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING_MEETUPS'})
+        return fetch('/meetups')
+        .then(resp => resp.json())
+        .then(meetups => dispatch({type: 'FETCH_MEETUPS', payload: meetups}))
+    }
+}
+
 export const addMeetup = (meetup) => {
     return (dispatch) => {
-        console.log(meetup)
         dispatch({type: 'ADD_MEETUP'}, meetup)
         return fetch('/meetups', {
             method: 'POST',
@@ -10,22 +18,18 @@ export const addMeetup = (meetup) => {
             }
         })
         .then(resp => resp.json())
-        .then(meetup => dispatch({type: 'MEETUP_ADDED', payload: friend}))
+        .then(meetup => dispatch({type: 'MEETUP_ADDED', payload: meetup}))
     }
 }
 
-export const addFriend = (friend) => {
+export const deleteMeetup = (id) => {
     return (dispatch) => {
-        console.log(friend)
-        dispatch({type: 'ADD_FRIEND'}, friend)
-        return fetch('/friends',{
-            method: 'POST',
-            body: JSON.stringify(friend),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        dispatch({type: 'DELETE_MEETUP'})
+        return fetch(`/meetups/${id}`, {
+            method: 'DELETE'
         })
         .then(resp => resp.json())
-        .then(friend => dispatch({type: 'FRIEND_ADDED', payload: friend}))
+        .then(meetups => dispatch({type: 'MEETUP_DELETED', payload: {meetups: meetups}}))
     }
 }
+

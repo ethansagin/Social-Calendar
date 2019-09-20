@@ -6,17 +6,17 @@ export default (state = {friends: [], loading: false}, action) => {
                 loading: true
             }
         case 'FETCH_FRIENDS':
-            return{
+            return {
                 friends: action.payload,
                 loading: false
             }
         case 'ADD_FRIEND':
-            return{
+            return {
                 ...state,
                 loading: true
             }
         case 'FRIEND_ADDED':
-            return{
+            return {
                 friends: [...state.friends, action.payload],
                 loading: false
             }

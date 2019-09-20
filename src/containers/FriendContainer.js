@@ -2,26 +2,38 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Friend from '../components/Friend'
 import MeetupInput from '../components/MeetupInput'
-import MeetupList from '../components/MeetupList'
+import MeetupsList from '../components/MeetupsList'
+import { getMeetups, deleteMeetup } from '../actions/meetups'
+
 
 class FriendContainer extends Component {
+    componentDidMount(){
+        this.props.getMeetups()
+    }
+
+    handleClick = (e) => {
+        console.log(e.target.id)
+        this.props.deleteMeetup(e.target.id)
+    }
+
     render() {
-        const friend = this.props.friends.filter(f => f.id === parseInt(this.props.match.params.id))[0]
         return(
             <div className='friend-container'>
-                <Friend friend={friend} />
+                <Friend friend={this.props.friend} />
                 <hr/>
-                <MeetupInput friend_id={friend.id}/>
-                <MeetupList/>
+                <MeetupInput friend_id={this.props.friend.id}/>
+                {this.props.loading ? <h3>Loading...</h3> : <MeetupsList meetups={this.props.meetups} handleOnClick={this.handleClick}/>}
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
     return {
-      friends: state.friendReducer.friends
+      friend: state.friendReducer.friends.filter(f => f.id === parseInt(props.match.params.id))[0],
+      meetups: state.meetupReducer.meetups.filter(m => m.friend_id === parseInt(props.match.params.id)),
+      loading: state.meetupReducer.loading
     }
 }
 
-export default connect(mapStateToProps)(FriendContainer)
+export default connect(mapStateToProps, { getMeetups, deleteMeetup })(FriendContainer)

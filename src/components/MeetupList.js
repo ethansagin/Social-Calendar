@@ -1,5 +1,7 @@
 import React from 'react';
 
-const MeetupList = () => {}
+const MeetupList = () => 
+    <div>
+    </div>
 
 export default MeetupList

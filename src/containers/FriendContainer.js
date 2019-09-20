@@ -11,7 +11,7 @@ class FriendContainer extends Component {
             <div className='friend-container'>
                 <Friend friend={friend} />
                 <hr/>
-                <MeetupInput/>
+                <MeetupInput friend_id={friend.id}/>
                 <MeetupList/>
             </div>
         )

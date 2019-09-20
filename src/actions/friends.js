@@ -9,9 +9,8 @@ export const getFriends = () => {
 
 export const addFriend = (friend) => {
     return (dispatch) => {
-        console.log(friend)
         dispatch({type: 'ADD_FRIEND'}, friend)
-        return fetch('/friends',{
+        return fetch('/friends', {
             method: 'POST',
             body: JSON.stringify(friend),
             headers: {

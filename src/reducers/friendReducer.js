@@ -20,6 +20,16 @@ export default (state = {friends: [], loading: false}, action) => {
                 friends: [...state.friends, action.payload],
                 loading: false
             }
+        case 'UPDATE_FRIEND':
+            return {
+                ...state,
+                loading: true
+            }
+        case 'FRIEND_UPDATED':
+            return {
+                friends: [...state.friends, action.payload],
+                loading: false
+            }
         default:
             return state
     }

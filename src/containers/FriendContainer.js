@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Friend from '../components/Friend'
+import FriendUpdate from '../components/FriendUpdate'
 import MeetupInput from '../components/MeetupInput'
 import MeetupsList from '../components/MeetupsList'
 import { getMeetups, deleteMeetup } from '../actions/meetups'
@@ -12,7 +13,6 @@ class FriendContainer extends Component {
     }
 
     handleClick = (e) => {
-        console.log(e.target.id)
         this.props.deleteMeetup(e.target.id)
     }
 
@@ -20,6 +20,7 @@ class FriendContainer extends Component {
         return(
             <div className='friend-container'>
                 <Friend friend={this.props.friend} />
+                <FriendUpdate friend={this.props.friend} />
                 <hr/>
                 <MeetupInput friend_id={this.props.friend.id}/>
                 {this.props.loading ? <h3>Loading...</h3> : <MeetupsList meetups={this.props.meetups} handleOnClick={this.handleClick}/>}

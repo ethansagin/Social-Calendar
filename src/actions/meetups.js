@@ -9,7 +9,7 @@ export const getMeetups = () => {
 
 export const addMeetup = (meetup) => {
     return (dispatch) => {
-        dispatch({type: 'ADD_MEETUP'}, meetup)
+        dispatch({type: 'ADD_MEETUP'})
         return fetch('/meetups', {
             method: 'POST',
             body: JSON.stringify(meetup),

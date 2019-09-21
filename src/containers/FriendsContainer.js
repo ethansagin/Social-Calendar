@@ -14,7 +14,6 @@ class FriendsContainer extends Component {
         this.props.deleteFriend(e.target.id)
     }
 
-
     render() {
         return(
             <div className='friends-container'>

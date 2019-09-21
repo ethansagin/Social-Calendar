@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import{ formatDate } from '../helpers'
 
 const friendLink = (friend) => 
     <Link to={`friends/${friend.id}`}>
@@ -13,7 +14,7 @@ const FriendsList = (props) =>
             <li key={i}>
                 {friendLink(f)} 
                 <br/>
-                Next Meetup: {f.next_meetup ? f.next_meetup : <strong>UNSCHEDULED</strong>}
+                Next Meetup: {f.next_meetup ? formatDate(f.next_meetup) : <strong>UNSCHEDULED</strong>}
             </li>
         )}
     </ul>

@@ -1,10 +1,11 @@
 import React from 'react';
+import { formatDate } from '../helpers'
 
 const MeetupsList = (props) =>
     <ul>
         {props.meetups.map((m, i) =>
             <li key={i}>
-                {m.date}
+                {formatDate(m.date)}
                 <button id={m.id} onClick={props.handleOnClick}> X </button> <br/>
                 <p>Time: {m.time}</p>
                 <p>Location: {m.location}</p>

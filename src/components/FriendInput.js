@@ -7,6 +7,7 @@ class FriendInput extends Component {
         super()
         this.state = {
             name: '',
+            birthday: '',
             visit_interval: 1,
             last_meetup: '',
             next_meetup: '',
@@ -34,6 +35,7 @@ class FriendInput extends Component {
         this.props.addFriend(friend)
         this.setState({
             name: '',
+            birthday: '',
             visit_interval: 1,
             last_meetup: '',
             loading: false,
@@ -46,6 +48,9 @@ class FriendInput extends Component {
             <form onSubmit={this.handleSubmit}>
                 <label>Your Friend's Name</label>
                 <input type='text' name='name' value={this.state.name} onChange={this.handleChange} /><br/>
+
+                <label>Your Friend's Birthday</label>
+                <input type='date' name='birthday' value={this.state.birthday} onChange={this.handleChange} /><br/>
 
                 <label>How Often (in Months) Would You Like to Meetup?</label>
                 <input type='number' name='visit_interval' value={this.state.visit_interval} onChange={this.handleChange} /><br/>

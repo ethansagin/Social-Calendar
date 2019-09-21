@@ -7,6 +7,7 @@ class MeetupInput extends Component {
         super(props)
         this.state = {
             date: '',
+            time: '',
             location: '',
             comments: '',
             friend_id: props.friend_id,
@@ -34,6 +35,7 @@ class MeetupInput extends Component {
         this.props.addMeetup(meetup)
         this.setState({
             date: '',
+            time: '',
             location: '',
             comments: '',
             loading: false,
@@ -46,6 +48,9 @@ class MeetupInput extends Component {
             <form onSubmit={this.handleSubmit}>
                 <label>Date of Meetup</label>
                 <input type='date' name='date' value={this.state.name} onChange={this.handleChange} /><br/>
+
+                <label>Time of Meetup</label>
+                <input type='time' name='time' value={this.state.time} onChange={this.handleChange} /><br/>
 
                 <label>Location</label>
                 <input type='text' name='location' value={this.state.visit_interval} onChange={this.handleChange} /><br/>

@@ -13,7 +13,7 @@ const FriendsList = (props) =>
             <li key={i}>
                 {friendLink(f)} 
                 <br/>
-                Next Meetup: {f.next_meetup}
+                Next Meetup: {f.next_meetup ? f.next_meetup : <strong>UNSCHEDULED</strong>}
             </li>
         )}
     </ul>

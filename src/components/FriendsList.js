@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import{ formatDate, findLastMeetup } from '../helpers'
+import{ findLastMeetup } from '../helpers'
 import { findNextMeetup } from '../helpers'
 
 const friendLink = (friend) => 

@@ -50,7 +50,7 @@ class MeetupInput extends Component {
                 <input type='date' name='date' value={this.state.name} onChange={this.handleChange} /><br/>
 
                 <label>Time of Meetup</label>
-                <input type='time' name='time' value={this.state.time} onChange={this.handleChange} /><br/>
+                <input type='text' name='time' value={this.state.time} onChange={this.handleChange} /><br/>
 
                 <label>Location</label>
                 <input type='text' name='location' value={this.state.visit_interval} onChange={this.handleChange} /><br/>

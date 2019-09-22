@@ -24,3 +24,18 @@ export const formatTime = (t) => {
     const formattedTime = `${hoursUS(hoursEU)}:${min < 10 ? 0 : null}${min} ${hoursEU < 12 ? 'AM' : 'PM'}`
     return formattedTime
 }
+
+export const findNextMeetup = (friend) => {
+    const currentDate = new Date()
+
+    if(friend.meetups.length === 0) {
+        return 'UNSCHEDULED'
+    }else{
+        const meetup = new Date(friend.meetups[0].date)
+        if(meetup > currentDate){
+            return formatDate(friend.meetups[0].date)
+        }else{
+            return 'UNSCHEDULED'
+        }
+    }
+}

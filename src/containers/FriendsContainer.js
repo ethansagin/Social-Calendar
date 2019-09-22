@@ -9,11 +9,6 @@ class FriendsContainer extends Component {
         this.props.getFriends()
     }
 
-    handleClick = (e) => {
-        e.preventDefault()
-        this.props.deleteFriend(e.target.id)
-    }
-
     render() {
         return(
             <div className='friends-container'>

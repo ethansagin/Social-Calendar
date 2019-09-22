@@ -58,3 +58,15 @@ export const findUpcomingBirthdays = (friends) => {
     })
 }
 
+export const findOverdue = (friends) => {
+    return friends.filter(f => {
+        const visitInterval = f.visitInterval * 2628000000
+        const currentDate = new Date()
+        const lastMeetup = new Date(f.meetups.sort((a, b) => a.date > b.date)[0])
+        const diff = currentDate - lastMeetup
+
+        if(diff > visitInterval || f.meetups.length === 0) {
+            return f
+        }
+    })
+}

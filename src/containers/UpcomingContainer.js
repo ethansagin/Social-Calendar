@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { getFriends } from '../actions/friends'
 import { getMeetups } from '../actions/meetups'
-import { upcomingBirthdays } from '../helpers'
+import { findUpcomingBirthdays } from '../helpers'
 import UpcomingMeetups from '../components/UpcomingMeetups'
 import UpcomingBirthdays from '../components/UpcomingBirthdays'
 import OverdueMeetups from '../components/OverdueMeetups'
@@ -18,7 +18,7 @@ class UpcomingContainer extends Component {
         return(
             <div>
                 <UpcomingMeetups futureMeetups={this.props.futureMeetups} />
-                <UpcomingBirthdays friends={this.props.friends} />
+                <UpcomingBirthdays friends={this.props.friendsWithBirthdays} />
                 <OverdueMeetups friends={this.props.friends} />
             </div>
         )
@@ -27,8 +27,9 @@ class UpcomingContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        friends: state.friendReducer.friends,
+        friendsWithBirthdays: findUpcomingBirthdays(state.friendReducer.friends),
         futureMeetups: state.meetupReducer.meetups.filter(m => ((new Date(m.date) - (new Date()) > 0))),
+        friends: state.friendReducer.friends
     }
 }
 

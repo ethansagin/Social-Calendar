@@ -1,5 +1,4 @@
 import React from 'react'
-import { findUpcomingBirthdays } from '../helpers'
 import { formatDate } from '../helpers'
 
 const sortedBirthdayLis = (arr) => {
@@ -14,7 +13,7 @@ const UpcomingBirthdays = (props) =>
     <div>
         <h3>Don't forget to wish them a Happy Birthday!</h3>
         <ul>
-            {sortedBirthdayLis(findUpcomingBirthdays(props.friends))}
+            {sortedBirthdayLis(props.friends)}
         </ul>
     </div>
 

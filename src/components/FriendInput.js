@@ -9,8 +9,6 @@ class FriendInput extends Component {
             name: '',
             birthday: '',
             visit_interval: 1,
-            last_meetup: '',
-            next_meetup: '',
             loading: false,
             showForm: false
         }
@@ -37,7 +35,6 @@ class FriendInput extends Component {
             name: '',
             birthday: '',
             visit_interval: 1,
-            last_meetup: '',
             loading: false,
             showForm: false
         })
@@ -54,9 +51,6 @@ class FriendInput extends Component {
 
                 <label>How Often (in Months) Would You Like to Meetup?</label>
                 <input type='number' name='visit_interval' value={this.state.visit_interval} onChange={this.handleChange} /><br/>
-
-                <label>When Was the Last Time You Got Together?</label>
-                <input type='date' name='last_meetup' value={this.state.last_meetup} onChange={this.handleChange} /><br/>
 
                 <input type='submit' value='Add Friend' /><br/>
 

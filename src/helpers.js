@@ -46,3 +46,15 @@ export const findLastMeetup = (friend) => {
         }
     }
 }
+
+export const findUpcomingBirthdays = (friends) => {
+    return friends.filter(f => {
+        const bDate = new Date(f.birthday)
+        const currentDate = new Date()
+
+        if((bDate.getMonth() - currentDate.getMonth()) === 0 || (bDate.getMonth() - currentDate.getMonth()) === 1) {
+            return f
+        }
+    })
+}
+

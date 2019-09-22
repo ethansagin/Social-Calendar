@@ -5,6 +5,7 @@ import { getMeetups } from '../actions/meetups'
 import { upcomingBirthdays } from '../helpers'
 import UpcomingMeetups from '../components/UpcomingMeetups'
 import UpcomingBirthdays from '../components/UpcomingBirthdays'
+import OverdueMeetups from '../components/OverdueMeetups'
 
 
 class UpcomingContainer extends Component {
@@ -18,6 +19,7 @@ class UpcomingContainer extends Component {
             <div>
                 <UpcomingMeetups futureMeetups={this.props.futureMeetups} />
                 <UpcomingBirthdays friends={this.props.friends} />
+                <OverdueMeetups friends={this.props.friends} />
             </div>
         )
     }

@@ -32,10 +32,33 @@ export const findNextMeetup = (friend) => {
         return 'UNSCHEDULED'
     }else{
         const meetup = new Date(friend.meetups[0].date)
-        if(meetup > currentDate){
+        if(meetup >= currentDate){
             return formatDate(friend.meetups[0].date)
         }else{
             return 'UNSCHEDULED'
         }
     }
+}
+
+export const findLastMeetup = (friend) => {
+    const currentDate = new Date()
+
+    if(friend.meetups.length === 0) {
+        return 'You have no meetups listed!'
+    }else if(friend.meetups.length === 1) {
+        const meetup = new Date(friend.meetups[0].date)
+        if(meetup < currentDate){
+            return formatDate(friend.meetups[0].date)
+        }else{
+            return 'You have no prior meetups listed!'
+        }    
+    }else if(friend.meetups.length > 1){
+        const meetup = new Date(friend.meetups[0].date)
+        if(meetup < currentDate){
+            return formatDate(friend.meetups[0].date)
+        }else{
+            return formatDate(friend.meetups[1].date)
+        }
+    }
+
 }

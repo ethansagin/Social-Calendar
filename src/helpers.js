@@ -27,20 +27,22 @@ export const findLastMeetup = (friend) => {
 
     if(friend.meetups.length === 0) {
         return 'You have no meetups listed!'
-    }else if(friend.meetups.length === 1) {
-        const meetup = new Date(friend.meetups[0].date)
-        if(meetup < currentDate){
-            return formatDate(friend.meetups[0].date)
-        }else{
-            return 'You have no prior meetups listed!'
-        }    
-    }else if(friend.meetups.length > 1){
-        const meetup = new Date(friend.meetups[0].date)
-        if(meetup < currentDate){
-            return formatDate(friend.meetups[0].date)
-        }else{
-            return formatDate(friend.meetups[1].date)
+    }else{
+        const meetupList = friend.meetups.sort((a, b) => (a.date < b.date) ? 1 : -1)
+        const meetupDate = new Date(meetupList[0].date)
+
+        if(friend.meetups.length === 1){ 
+            if(meetupDate < currentDate){
+                return formatDate(meetupList[0].date)
+            }else{
+                return 'You have no prior meetups listed!'
+            }
+        }else if(friend.meetups.length > 1){
+            if(meetupDate < currentDate){
+                return formatDate(meetupList[0].date)
+            }else{
+                return formatDate(meetupList[1].date)
+            }
         }
     }
-
 }

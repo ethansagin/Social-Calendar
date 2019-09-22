@@ -16,7 +16,7 @@ class UpcomingContainer extends Component {
     render(){
         return(
             <div>
-                <UpcomingMeetups futureMeetups={this.props.futureMeetups} bdays={this.props.upcomingBirthdays}/>
+                <UpcomingMeetups futureMeetups={this.props.futureMeetups} />
                 <UpcomingBirthdays friends={this.props.friends} />
             </div>
         )

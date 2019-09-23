@@ -1,10 +1,10 @@
 import React from 'react'
-import { formatDate } from '../helpers'
+import { formatBirthDate } from '../helpers'
 
 const sortedBirthdayLis = (arr) => {
-    return arr.sort((a, b) => (a.date > b.date) ? 1 : -1).map((f, i) =>
+    return arr.sort((a, b) => (a.birthday > b.birthday) ? 1 : -1).map((f, i) =>
         <li key={i}>
-            {formatDate(f.birthday)} - {f.name}
+            {formatBirthDate(f.birthday)} - {f.name}
         </li>    
     )
 }
@@ -13,7 +13,7 @@ const UpcomingBirthdays = (props) =>
     <div>
         <h3>Don't forget to wish them a Happy Birthday!</h3>
         <ul>
-            {sortedBirthdayLis(props.friends)}
+            {sortedBirthdayLis(props.birthdayFriends)}
         </ul>
     </div>
 

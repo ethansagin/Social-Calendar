@@ -7,6 +7,7 @@ export default (state = {friends: [], loading: false}, action) => {
             }
         case 'FETCH_FRIENDS':
             return {
+                ...state,
                 friends: action.payload,
                 loading: false
             }
@@ -17,6 +18,7 @@ export default (state = {friends: [], loading: false}, action) => {
             }
         case 'FRIEND_ADDED':
             return {
+                ...state,
                 friends: [...state.friends, action.payload],
                 loading: false
             }
@@ -26,8 +28,10 @@ export default (state = {friends: [], loading: false}, action) => {
                 loading: true
             }
         case 'FRIEND_UPDATED':
+            let newFriends = state.friends.filter(f => f.id !== action.payload.id).concat(action.payload)
             return {
-                friends: [...state.friends, action.payload],
+                ...state, 
+                friends: newFriends,
                 loading: false
             }
         default:

@@ -81,48 +81,4 @@ export const determineOverdueMeetup = (friend) => {
         return `OVERDUE BY ${Math.floor((diff - visitInterval)/86400000)} DAYS`
     }
 }
-    // let list = friends.filter(f => f.meetups.length > 0 && findLastMeetup(f) !== 'You have no prior meetups listed!')
-    // let l = []
 
-    // list.forEach(f => {
-    //     const visitInterval = f.visitInterval
-    //     const currentDate = new Date()
-    
-    //     if(findNextMeetup(f) === 'UNSCHEDULED'){
-    //         const lastMeetup = new Date(f.meetups.sort((a, b) => (a.date > b.date) ? 1 : -1)[0].date)
-    //         const diff = currentDate - lastMeetup
-
-    //         if(diff > visitInterval){
-    //             l = [...l, f]
-    //         }
-    //     }else{
-    //         const lastMeetup = new Date(f.meetups.sort((a, b) => (a.date > b.date) ? 1 : -1)[1].date)
-    //         const diff = currentDate - lastMeetup
-
-    //         if(diff > visitInterval){
-    //             l = [...l, f]
-    //         }
-    //     } 
-    // })
-    // debugger
-    // return l
-
-
-// export const findOverdue = (friends) => {
-//     return friends.filter(f => {
-//         if(f.meetups.length === 0){
-//             return f
-//         }else if(f.meetups.length === 1 && findNextMeetup(f) === 'UNSCHEDULED') {
-//             return f
-//         }else if(f.meetups.length > 1){
-//             const visitInterval = f.visit_interval * 2628000000
-//             const currentDate = new Date()
-//             const lastMeetup = new Date(f.meetups.sort((a, b) => (a.date > b.date) ? 1 : -1)[0].date)
-//             const diff = currentDate - lastMeetup
-
-//             if(diff > visitInterval) {
-//                 return f
-//             }
-//         }
-//     })
-// }

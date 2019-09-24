@@ -2,7 +2,7 @@ import React from 'react'
 import { formatDate } from '../helpers'
 
 const sortedMeetupLis = (meetups) => {
-    return meetups.sort((a, b) => (a.date > b.date) ? 1 : -1).map((m, i) =>
+    return meetups.map((m, i) =>
         <li key={i}>
             {formatDate(m.date)} at {m.location} with {m.friend.name}
         </li>    

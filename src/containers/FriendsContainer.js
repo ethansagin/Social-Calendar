@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import FriendInput from '../components/FriendInput'
 import FriendsList from '../components/FriendsList'
 import { getFriends } from '../actions/friends'
-import ClickMe from '../components/ClickMe'
 
 class FriendsContainer extends Component {
     componentDidMount(){

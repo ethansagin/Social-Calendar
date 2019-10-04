@@ -1,0 +1,13 @@
+img {
+    width: 550px;
+    length: 8000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.home {
+    text-align: center;
+}
+
+.disclaimer {color: red}

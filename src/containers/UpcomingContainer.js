@@ -6,6 +6,7 @@ import { findUpcomingBirthdays, findFriendsWithoutNextMeetup } from '../helpers'
 import UpcomingMeetups from '../components/UpcomingMeetups'
 import UpcomingBirthdays from '../components/UpcomingBirthdays'
 import UnscheduledMeetups from '../components/UnscheduledMeetups'
+import '../UpcomingContainer.css'
 
 
 class UpcomingContainer extends Component {
@@ -16,9 +17,10 @@ class UpcomingContainer extends Component {
 
     render(){
         return(
-            <div>
+            <div className="upcoming-container">
                 <UpcomingMeetups futureMeetups={this.props.futureMeetups} />
                 <UpcomingBirthdays birthdayFriends={this.props.friendsWithBirthdays} />
+                <hr/>
                 <UnscheduledMeetups friendsWithoutNextMeetup={this.props.friendsWithoutNextMeetup} />
             </div>
         )

@@ -3,7 +3,7 @@ hr {border-top: 1px dotted blue;}
 .upcoming-birthdays {
     display: inline-block;
     vertical-align: top;
-    margin: 0px 20px
+    margin: 0px 50px
 }
 
 .upcoming-meetups {
@@ -12,3 +12,5 @@ hr {border-top: 1px dotted blue;}
 }
 
 .overdue-meetups h3 {color: red}
+
+.overdue-meetups li {margin: 10px 20px}

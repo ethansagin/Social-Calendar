@@ -6,7 +6,7 @@ const unscheduledLis = (friends) =>
         <li>
             {f.name}<br/>
             Last Meetup: {findLastMeetup(f)}<br/>
-            {f.meetups.length > 0 ? determineOverdueMeetup(f) : ''}
+            {f.meetups.length > 0 ? <strong>{determineOverdueMeetup(f)}</strong> : ''}
         </li>
     )
 

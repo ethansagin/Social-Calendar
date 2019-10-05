@@ -60,7 +60,7 @@ export const findUpcomingBirthdays = (friends) => {
         const bDate = new Date(f.birthday)
         const currentDate = new Date()
 
-        if((bDate.getMonth() - currentDate.getMonth()) === 0 || (bDate.getMonth() - currentDate.getMonth()) === 1) {
+        if((bDate.getMonth() - currentDate.getMonth()) === 0) {
             return f
         }
     })

@@ -30,7 +30,7 @@ class UpcomingContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         friendsWithBirthdays: findUpcomingBirthdays(state.friendReducer.friends).sort((a, b) => 
-            ((new Date(a.birthday).getMonth()) > (new Date(b.birthday).getMonth())) ? 1 : -1),
+            ((new Date(a.birthday).getDate()) > (new Date(b.birthday).getDate())) ? 1 : -1),
         friendsWithoutNextMeetup: findFriendsWithoutNextMeetup(state.friendReducer.friends),
         futureMeetups: state.meetupReducer.meetups.filter(m => ((new Date(m.date) - (new Date()) > 0)))
             .sort((a, b) => (a.date > b.date) ? 1 : -1)

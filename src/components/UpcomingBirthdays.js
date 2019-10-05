@@ -11,7 +11,7 @@ const sortedBirthdayLis = (arr) => {
 
 const UpcomingBirthdays = (props) => 
     <div className="upcoming-birthdays">
-        <h3>Don't forget to wish them a Happy Birthday!</h3>
+        <h3>Don't forget to wish them a Happy Birthday this month!</h3>
         <ul>
             {sortedBirthdayLis(props.birthdayFriends)}
         </ul>

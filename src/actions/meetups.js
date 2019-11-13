@@ -1,4 +1,4 @@
-const API_URL = "https://social-calendar-api-postgresql.herokuapp.com/"
+const API_URL = 'https://social-calendar-api-postgresql.herokuapp.com/'
 
 export const getMeetups = () => {
     return (dispatch) => {

@@ -1,7 +1,10 @@
+const PROXY = 'https://cors-anywhere.herokuapp.com/'
+const API_URL = 'https://social-calendar-api-postgresql.herokuapp.com/'
+
 export const getMeetups = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_MEETUPS'})
-        return fetch("https://social-calendar-api-postgresql.herokuapp.com/" + '/meetups')
+        return fetch(PROXY + API_URL + '/meetups')
         .then(resp => resp.json())
         .then(meetups => dispatch({type: 'FETCH_MEETUPS', payload: meetups}))
     }
@@ -10,7 +13,7 @@ export const getMeetups = () => {
 export const addMeetup = (meetup) => {
     return (dispatch) => {
         dispatch({type: 'ADD_MEETUP'})
-        return fetch("https://social-calendar-api-postgresql.herokuapp.com/" + '/meetups', {
+        return fetch(PROXY + API_URL + '/meetups', {
             method: 'POST',
             body: JSON.stringify(meetup),
             headers: {
@@ -25,7 +28,7 @@ export const addMeetup = (meetup) => {
 export const deleteMeetup = (id) => {
     return (dispatch) => {
         dispatch({type: 'DELETE_MEETUP'})
-        return fetch("https://social-calendar-api-postgresql.herokuapp.com/" + `/meetups/${id}`, {
+        return fetch(PROXY + API_URL + `/meetups/${id}`, {
             method: 'DELETE'
         })
         .then(resp => resp.json())

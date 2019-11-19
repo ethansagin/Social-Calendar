@@ -20,9 +20,9 @@ CLIENT-SIDE
 5) Web page should automatically open in browser on localhost:3000
 
 API
-6) Open a separate terminal and clone the Github repository for the api: "git@github.com:ethansagin/Social-Calendar-API.git"
+6) Open a separate terminal and clone the Github repository for the api: "git@github.com:ethansagin/Social-Calendar-API-Postgresql.git"
 
-7) Change directories to the cloned directory: "cd social-calendar-api"
+7) Change directories to the cloned directory: "cd social-calendar-api-postgresql"
 
 8) Install the required gems: "bundle install"
 

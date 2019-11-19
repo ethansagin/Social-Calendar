@@ -12,11 +12,6 @@ class Home extends Component {
 
                 <img src="https://timesofindia.indiatimes.com/blogs/wp-content/uploads/2017/06/friendship.jpg" alt="pic_of_friends"/>
 
-                <p className="disclaimer">
-                    <strong>Note: </strong>This app uses a Rails API to store your information. <br/>
-                    Make sure that you have started the API in a second terminal before using (see README for further instructions)
-
-                </p>
             </div>
         )
     }

@@ -2,6 +2,8 @@ Welcome to the React Social Calendar, your one-stop-shop for all of your social 
 
 The app serves as a social calendar through which you can track your past meetups and schedule future ones with your friends. You can set a monthly interval of how often you would like to see friend, and the app will alert you if you are overdue to schedule a meetup within that interval. Additionally, the Upcoming page will list friends' meetups and birthdays that are scheduled for the immediate future, as well as list any friends with whom you have yet to schedule your next meetup.
 
+Check out a deployed version of this app at: https://social-calendar-client.herokuapp.com/
+
 INSTALLATION
 
 ***Note: this application requires front- and back-end elements to run simultaneously on two separate terminals, the app designates the ports as localhost:3000 for client-side functions and localhost:3001 for the api***
